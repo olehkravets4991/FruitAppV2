@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs') %>
+<body>
+    <%- include('../partials/header.ejs') %>
+    <main>
+        <div>
+            <form method="POST" action="/fruit/<%=fruit._id%>?_method=PUT">
+                <fieldset>
+                    <legend>Create a new fruit</legend>
+                    <label>Name: <input type="text" name="name" placeholder="enter fruit name" value="<%=fruit.name%>"/></label>
+                    <label>Color: <input type="text" name="color" placeholder="enter fruit color" value="<%=fruit.color%>"/></label>
+                    <label>Ready to eat: 
+
+                        <input 
+                            type="checkbox" 
+                            name="readyToEat" 
+                            <%=fruit.readyToEat ? "checked" : "" %>
+                        />
+
+                    </label>
+                    <input type="submit" value="create new fruit"/>
+                </fieldset>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
