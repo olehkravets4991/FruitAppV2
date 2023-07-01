@@ -8,7 +8,7 @@
             <form method="POST" action="/fruit/<%=fruit._id%>?_method=PUT">
                 <fieldset>
                     <legend>Create a new fruit</legend>
-                    <label>Name: <input type="text" name="name" placeholder="enter fruit name" value="<%=fruit.name%>"/></label>
+                    <label>Name: <input required type="text" name="name" placeholder="enter fruit name" value="<%=fruit.name%>"/></label>
                     <label>Color: <input type="text" name="color" placeholder="enter fruit color" value="<%=fruit.color%>"/></label>
                     <label>Ready to eat: 
 
@@ -19,7 +19,7 @@
                         />
 
                     </label>
-                    <input type="submit" value="create new fruit"/>
+                    <input type="submit" value="edit fruit"/>
                 </fieldset>
             </form>
         </div>

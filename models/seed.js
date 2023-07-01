@@ -1,5 +1,5 @@
 const mongoose = require('./connection');
-const Fruit = require('../controllers/fruit');
+const Fruit = require('./fruit');
 
 
 mongoose.connection.on('open', async () => {
@@ -20,6 +20,4 @@ mongoose.connection.on('open', async () => {
 
     //2. we are going to close the connection
     mongoose.connection.close();
-
-
-})
+});

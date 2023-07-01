@@ -9,12 +9,8 @@
                 <h2><%= fruit.name%> - <%=fruit.readyToEat ? "Ripe" : "Not Ripe" %></h2>
                 <h3><%= fruit.color%></h3>
                 
-                <!-- <a href="/fruit"><button>Edit</button></a> -->
                 <a href="/fruit/<%=fruit._id %>/edit"><button>Edit</button></a>
                 <form action="/fruit/<%=fruit._id %>?_method=DELETE" method="POST">
-                    <input type="submit" value="delete" />
-              </form>
-                <form>
                     <input type="submit" value="delete" />
                 </form>
 

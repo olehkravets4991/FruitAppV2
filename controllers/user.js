@@ -1,25 +1,14 @@
 const express = require('express');
 const bcrypt = require('bcryptjs');
 const User = require('../models/user');
+const { route } = require('./fruit');
 
 const router = express.Router();
 
 router.get('/signup', (req, res) => {
-    //this is just temp
+
     res.render('users/signup.ejs');
 });
-
-// router.post('/signup', (req, res) => {
-//     //this is just temp
-//     res.send('signup');
-// });
-
-// router.post('/signup', async (req, res) => {
-//     // req.body = { username: 'David', password: 'Yim'}
-//     req.body.password = await bcrypt.hash(req.body.password, await bcrypt.genSalt(10));
-//     await User.create(req.body);
-//     res.redirect('/user/login');
-// });
 
 router.post('/signup', async (req, res) => {
     try{
@@ -33,16 +22,9 @@ router.post('/signup', async (req, res) => {
 
 
 
-
 router.get('/login', (req, res) => {
-    //this is just temp
     res.render('users/login.ejs');
 });
-
-// router.post('/login', (req, res) => {
-//     //this is just temp
-//     res.send('login');
-// });
 
 router.post('/login', async (req, res) => {
     const user = await User.findOne({ username: req.body.username });
@@ -67,8 +49,8 @@ router.post('/login', async (req, res) => {
             res.send('wrong password')
         }
     }
-
 });
+
 
 // destroy the session an have the user go back to the / route
 router.get('/logout', (req, res ) => {
@@ -76,6 +58,5 @@ router.get('/logout', (req, res ) => {
         res.redirect('/');
     })
 })
-
 
 module.exports = router;

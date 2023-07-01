@@ -1,37 +1,23 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <%- include('../partials/head.ejs') %>
 <body>
     <%- include('../partials/header.ejs') %>
-    <a href="/fruit/new">Create New Fruit</a>
     <main>
         <div>
-           
+            <p><%= user%></p>
+            <a href="/user/logout"><button>Logout</button></a>
+            <a href="/fruit/new">Create New Fruit</a>
             <% for (fruit of fruits) { %>
                 <article>
-                    <h2>
-                        <%= fruit.name %>
-                    </h2>
+                    <a href="/fruit/<%= fruit._id %>">
+                        <h2>
+                            <%= fruit.name %>
+                        </h2>
+                    </a>
                 </article>
             <% } %>
         </div>
     </main>
 </body>
-</html> -->
-
-<!DOCTYPE html>
-<html lang="en">
-<%- include('./partials/head.ejs') %>
-
-    <body>
-        <p><%= user%></p>
-        <%- include('./partials/header.ejs') %>
-            <main>
-                <div>
-                    <a href="/user/signup"><button>Sign Up</button></a>
-                    <a href="/user/login"><button>Login Up</button></a>
-                    <a href="/user/logout"><button>Logout</button></a>
-                </div>
-            </main>
-    </body>
 </html>
